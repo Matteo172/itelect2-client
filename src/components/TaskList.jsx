@@ -4,7 +4,9 @@ function TaskList({ tasks }) {
       {tasks.map((task) => (
         <li key={task.id}>
           <span>{task.title}</span>
-          <span className="due-date">{task.dueDate}</span>
+          <span className="due-date">
+            {task.dueDate ? task.dueDate.slice(0, 10) : "No due date"}
+          </span> 
         </li>
       ))}
     </ul>
